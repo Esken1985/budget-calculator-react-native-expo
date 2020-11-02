@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textTransform: "capitalize",
     fontWeight: "bold",
-    color: "#9e9e9e",
+    color: "#333"
     
   },
   expAmount: {

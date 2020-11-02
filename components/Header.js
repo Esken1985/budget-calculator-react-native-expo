@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f15025",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 56,
+    marginTop: 35,
   },
   headerText: {
     color: "#ffffff",

@@ -19,9 +19,10 @@ export default function App() {
   const [charge, setCharge] = useState("");
   const [amount, setAmount] = useState("");
 
-  const handleCharge = (value) => {
-    setCharge(value);
-  };
+  const total = expenses.reduce((acc, curr) => {
+    return (acc += parseInt(curr.amount));
+  }, 0);
+
   const handleModalOpening = () => {
     setModalOpen(true);
   };
@@ -31,9 +32,9 @@ export default function App() {
   const addExpense = (expense) => {
     expense.key = Math.random().toString();
     setExpenses((currentExpenses) => {
-      return [expense, ...currentExpenses];
+      return [...currentExpenses, expense];
     });
-    setModalOpen(false)
+    setModalOpen(false);
   };
 
   return (
@@ -44,11 +45,16 @@ export default function App() {
           size={28}
           handleModalClosing={handleModalClosing}
         />
-        <ExpensesForm addExpense={addExpense}/>
+        <ExpensesForm addExpense={addExpense} />
       </Modal>
       <Header />
       <ExpensesList expenses={expenses} />
       <Button text="add new" handleModalOpening={handleModalOpening} />
+      <View>
+        <Text style={styles.totalExpenses}>
+          Total Expenses : ${total}
+        </Text>
+      </View>
     </View>
   );
 }
@@ -57,5 +63,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  totalExpenses: {
+    backgroundColor: "#d50000",
+    paddingHorizontal: 3,
+    paddingVertical: 1,
+    borderRadius: 5,
+    color: "#fff",
+    fontWeight: "bold",
+    width: 300,
+    alignSelf: "center",
+    borderRadius: 15,
+    height: 50,
+    marginTop: 20,
+    textAlignVertical: "center",
+    paddingLeft: 10,
+    fontSize: 24,
+    textAlign: "center"
+  },
+  total: {
+    marginLeft: 20
   },
 });

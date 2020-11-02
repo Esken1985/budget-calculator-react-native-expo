@@ -1,9 +1,10 @@
 import { Formik } from "formik";
 import React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
+import { add } from "react-native-reanimated";
 import Button from "./Button";
 
-const ExpensesForm = ({addExpense}) => {
+const ExpensesForm = ({ addExpense }) => {
   return (
     <View style={styles.formContainer}>
       <Formik
@@ -29,8 +30,8 @@ const ExpensesForm = ({addExpense}) => {
               value={props.values.amount}
               keyboardType="numeric"
             />
-            <View style={styles.submitBtn}>
-              <Button text="submit" />
+            <View style={styles.submitBtn} >
+              <Button text="submit" onPress={props.handleSubmit} />
             </View>
           </View>
         )}
@@ -59,13 +60,12 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     marginTop: 5,
     height: 50,
-    fontSize: 24
+    fontSize: 24,
   },
   formContainer: {
     justifyContent: "center",
     alignItems: "center",
     marginTop: 200,
-    
   },
 });
 

@@ -2,12 +2,12 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-const Button = ({ name, color, size, text, handleModalOpening, handleModalClosing }) => {
+const Button = ({ name, color, size, text, handleModalOpening, handleModalClosing, onPress }) => {
   return (
     <TouchableOpacity>
       <View style={styles.button}>
         {text ? (
-          <Text style={styles.btnText} onPress={handleModalOpening} >{text}</Text>
+          <Text style={styles.btnText} onPress={text === "add new" ? handleModalOpening : onPress} >{text}</Text>
         ) : (
           <Icon name={name} color={color} size={size} onPress={handleModalClosing} />
         )}

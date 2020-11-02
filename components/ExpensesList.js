@@ -6,7 +6,7 @@ const ExpensesList = ({ expenses }) => {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>My Expenses</Text>
+        <Text style={styles.titleText}>My Recent Expenses</Text>
       </View>
       <FlatList
         data={expenses}
@@ -18,7 +18,7 @@ const ExpensesList = ({ expenses }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
+    marginTop: 20,
   },
   titleContainer: {
     justifyContent: "center",

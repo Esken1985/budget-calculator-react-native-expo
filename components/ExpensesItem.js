@@ -10,8 +10,8 @@ const ExpensesItem = ({ expense }) => {
         <Text style={styles.expAmount}>${expense.amount}</Text>
       </View>
       <View style={styles.btnContainer}>
-        <Button name="edit" color="green" size={24} />
-        <Button name="delete" color="red" size={24} />
+        <Button name="edit" color="#4caf50" size={24} />
+        <Button name="delete" color="#d50000" size={24} />
       </View>
     </View>
   );
@@ -32,10 +32,13 @@ const styles = StyleSheet.create({
     marginRight: 40,
     fontSize: 16,
     textTransform: "capitalize",
+    fontWeight: "bold",
+    color: "#9e9e9e",
+    
   },
   expAmount: {
     fontSize: 14,
-    backgroundColor: "#f15025",
+    backgroundColor: "#d50000",
     paddingHorizontal: 3,
     paddingVertical: 1,
     borderRadius: 5,
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "flex-end"
   },
 });
 
